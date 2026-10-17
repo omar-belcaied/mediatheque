@@ -1,4 +1,6 @@
-public class Dvd extends Document implements Empruntable{
+package mediatheque.model;
+
+public class Dvd extends Document implements Empruntable {
     private String realisateur;
     private int duree;
     private String genre;

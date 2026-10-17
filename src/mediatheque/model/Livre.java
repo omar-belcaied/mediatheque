@@ -1,3 +1,5 @@
+package mediatheque.model;
+
 public class Livre extends Document implements Empruntable {
     private final String auteur;
     private final int nbPages;
@@ -11,7 +13,7 @@ public class Livre extends Document implements Empruntable {
 
     @Override
     public String descriptionCourte() {
-        return "[ Livre ] " + titre + " (" + annee + "), "
+        return "[ mediatheque.model.Livre ] " + titre + " (" + annee + "), "
                 + auteur + ", " + nbPages + " p.";
     }
 

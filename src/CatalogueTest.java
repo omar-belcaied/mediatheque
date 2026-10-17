@@ -1,3 +1,7 @@
+import mediatheque.catalogue.Catalogue;
+import mediatheque.model.Document;
+import mediatheque.model.Livre;
+import mediatheque.model.Revue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

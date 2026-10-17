@@ -1,4 +1,6 @@
-public class Revue extends Document { // pas d’ Empruntable !
+package mediatheque.model;
+
+public class Revue extends Document { // pas d’ mediatheque.model.Empruntable !
     private final int numero ;
     public Revue ( String titre , int annee , int numero ) {
         super ( titre , annee );
@@ -6,7 +8,7 @@ public class Revue extends Document { // pas d’ Empruntable !
     }
     @Override
     public String descriptionCourte () {
-        return "[ Revue ] " + titre + " n." + numero
+        return "[ mediatheque.model.Revue ] " + titre + " n." + numero
                 + " (" + annee + ") - consultation sur place ";
     }
 }
