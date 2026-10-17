@@ -1,7 +1,9 @@
 package mediatheque.model;
 
+import mediatheque.exception.DocumentIndisponibleException;
+
 public interface Empruntable {
-    void emprunter () ;
+    void emprunter () throws DocumentIndisponibleException;
     void rendre () ;
     boolean estDisponible () ;
 }

@@ -1,5 +1,7 @@
 package mediatheque.model;
 
+import mediatheque.exception.DocumentIndisponibleException;
+
 public class Dvd extends Document implements Empruntable {
     private String realisateur;
     private int duree;
@@ -22,9 +24,13 @@ public class Dvd extends Document implements Empruntable {
     }
 
     @Override
-    public void emprunter() {
-        if (!disponible)
-            throw new IllegalStateException("Deja emprunte : " + titre);
+    public void emprunter() throws DocumentIndisponibleException {
+        if (!disponible) {
+            throw new DocumentIndisponibleException(
+                    "Déjà emprunté : " + titre
+            );
+        }
+
         disponible = false;
     }
 

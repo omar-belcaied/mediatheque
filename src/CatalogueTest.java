@@ -1,4 +1,5 @@
 import mediatheque.catalogue.Catalogue;
+import mediatheque.exception.DocumentIndisponibleException;
 import mediatheque.model.Document;
 import mediatheque.model.Livre;
 import mediatheque.model.Revue;
@@ -11,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class CatalogueTest {
 
     @Test
-    void empruntNominal() {
+    void empruntNominal() throws DocumentIndisponibleException {
         Livre l = new Livre("Clean Code", 2008, "R. Martin", 464);
         l.emprunter();
         assertFalse(l.estDisponible());
@@ -20,10 +21,10 @@ class CatalogueTest {
     }
 
     @Test
-    void doubleEmpruntLeveException() {
+    void doubleEmpruntLeveException() throws DocumentIndisponibleException {
         Livre l = new Livre("Refactoring", 1999, "M. Fowler", 448);
         l.emprunter();
-        assertThrows(IllegalStateException.class, l::emprunter);
+        assertThrows(DocumentIndisponibleException.class, l::emprunter);
     }
 
     @Test
