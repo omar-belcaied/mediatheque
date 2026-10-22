@@ -9,7 +9,7 @@ public class Catalogue <T extends Document> {
 
     public void ajouter (T element ) { elements . add ( element ); }
 
-    public Optional <T > rechercherParTitre ( String titre ) {
+    public Optional <T> rechercherParTitre ( String titre ) {
         return elements . stream ()
                 . filter ( d -> d. getTitre () . equalsIgnoreCase ( titre ))
                 . findFirst () ;
